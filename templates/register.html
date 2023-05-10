@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>register</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  
+</head>
+<body>
+   
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <center>
+            <div class="login_box">
+              <div class="login_form">
+              <h4>Register Form</h4>
+              <br>
+                <form action="/register" method="post">  
+                
+                <input type="text" id="name" name="name" placeholder="Name" style="margin-top:5px; border:1px solid green;" required><br>
+
+                <input type="email" id="email" name="email" placeholder="Email" style="margin-top:5px; border:1px solid green;" required><br>
+                
+                <input type="password" id="password" name="password" placeholder="Password" style="margin-top:5px; border:1px solid green;" required><br><br>
+               
+                <input type="submit" value="Next" id="login_register_button"><br><br>
+
+                <u><a href="/login" id="go-to-register">Already have an account?</a></u>
+
+                </form>  
+              </div>        
+            </div>
+          </center>   
+          </div>   
+          <div class="col-md-4"></div>
+          </div>
+        </div>
+</body>
+</html>

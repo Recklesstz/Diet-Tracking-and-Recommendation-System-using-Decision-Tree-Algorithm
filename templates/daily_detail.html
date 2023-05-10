@@ -1,0 +1,59 @@
+{% extends "header_footer.html" %}
+{% block title %}
+Daily Progress
+{% endblock %}
+ {% block content %}
+ 
+        <div class="container-fluid">
+
+
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+            <center>
+            
+            <br>
+                <h4> Daily Progress  </h4>
+                <hr style="width: 20%;height:1px;background-color:green">
+                <div class="row">
+                <div class="col-md-4">
+                </div>
+                  <div class="col-md-4">
+                  <form action="/daily_detail" method="POST">
+                    <input name="date" type="date">
+                    <input type="submit" value="Select">
+
+                  </form>
+                  <div class="profile_setup">
+                      <p><h4>{{date}}</h4></p>
+                      <br>
+                      <p><b>BodyWeight:</b> {{weight}}lb</p>
+                      <p><b>Protein consumed:</b> {{protein}}g</p>
+                <p><b>Carb consumed:</b> {{carb}}g</p>
+                <p><b>Fat consumed:</b> {{fat}}g</p>
+                <p><b>Energy (calorie) Required:</b> {{calorie}}kcal</p>
+                <p><b>Energy (calorie) Consumed:</b> {{consumed}}kcal</p>
+                
+                <p><b>{{deficit}}</b></p>
+                <br>
+                <p>{{result}}</p>
+                  </div>
+                  </div> 
+
+                 <div class="col-md-4">
+                </div>
+                
+
+
+                
+                
+            </div>
+            <br>
+            <a href="/progress"> <button style="margin-top:5px;"  id="editbutton">Back</button></a>
+
+          </center>   
+           
+          <div class="col-md-1"></div>
+          </div>
+        </div>
+{% endblock %}

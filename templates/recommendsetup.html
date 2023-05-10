@@ -1,0 +1,220 @@
+{% extends "header_footer.html" %}
+{% block title %}
+Recommendation
+{% endblock %}
+ {% block content %}
+ 
+        
+
+
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+            <center>
+            <div class="profile_setup">
+            <br>
+                <h4>Setup Today Recommendation </h4>
+                <hr style="width: 20%;height:1px;background-color:green">
+                <p>This form is optional and please fill up below information for more customization</p>
+                <br>
+                <form action="/recommendation" method="POST">
+                <div class="row">
+                  <div class="col-md-3">
+                    <p id="recommend_title">Breakfast</p>
+                    <label for="breakfast">Select dish type</label><br>
+                  <select name="breakfast_dishes" id="breakfast" class="setup_inputs" required >
+                    
+                    <option value="toast">Toast</option>
+                    <option value="grain">Grains</option>
+                    <option value="egg">Eggs</option>
+                    <option value="wrap">Wraps</option>
+                    <option value="pasta">Pasta</option>
+                    
+
+                  </select>
+                  <br><br>
+                  <!-- <label for="breakfast_bev">Select beverage</label><br>
+                  <select name="breakfast_bev" id="breakfast_bev" class="setup_inputs" required >
+                    
+                    <option value="bf_smoothie">Smoothie</option>
+                    <option value="bf_coffee">Coffee</option>
+                    <option value="bf_milk">Milk</option>
+                    <option value="bf_tea">Tea</option>
+                    <option value="any">Any</option>
+                  </select> -->
+                  </div>
+                  <div class="col-md-3">
+                    <p id="recommend_title">Lunch</p>
+                    <label for="Lunch">Select Dish Type</label><br>
+                  <select name="lunch_dishes" id="lunch" class="setup_inputs" required>
+                    
+                    <option value="stir-fried">Stir-Fried</option>
+                    <option value="soup">Soup</option>
+                    <option value="salad">Salad</option>
+                    
+                    <option value="pasta">Pasta</option>
+                    <option value="wrap">Wraps</option>
+                    
+
+                  </select>
+                  </div>
+                  <div class="col-md-3">
+                    <p id="recommend_title">Snack</p>
+
+                    <label for="snack">Select dish type</label><br>
+                  <select name="snack_dishes" id="snack" class="setup_inputs" required >
+                    
+                    <option value="toast">Toast</option>
+                    <option value="grain">Grains</option>
+
+                    <option value="wrap">Wraps</option>
+                    <option value="pasta">Pasta</option>
+                    <option value="baked">Baked</option>
+                    <option value="drinks">Drinks</option>
+                    
+
+                  </select>
+                  <br><br>
+                  <!-- <label for="snack_bev">Select beverage</label><br>
+                  <select name="snack_bev" id="snack_bev" class="setup_inputs" required >
+                    
+                    <option value="snack_smoothie">Smoothie</option>
+                    <option value="snack_coffee">Coffee</option>
+                    <option value="snack_milk">Milk</option>
+                    <option value="snack_tea">Tea</option>
+                    <option value="any">Any</option>
+                  </select> -->
+
+                  </div>
+                  <div class="col-md-3">
+                    <p id="recommend_title">Dinner</p>
+                    <label for="dinner">Select Dinner Type</label><br>
+                  <select name="dinner_dishes" id="dinner" class="setup_inputs" required>
+                    
+                    <option value="stir-fried">Stir-Fried</option>
+                    <option value="soup">Soup</option>
+                    <option value="salad">Salad</option>
+                    
+                    <option value="pasta">Pasta</option>
+                    <option value="wrap">Wraps</option>
+                    
+
+                  </select>
+
+                  </div>
+                </div>
+
+                <br> 
+                
+                <div class="row">
+                <div class="col-md-3">
+                  <br><br>
+                  <p>Favorite Vege<hr style="width: 60%;height:1px;background-color:green"></p>
+                  <input type="checkbox" id="lettuce" name="vege" value="lettuce">
+            <label for="lettuce">Lettuce</label>
+            <input type="checkbox" id="tomato" name="vege" value="tomato">
+            <label for="tomato">Tomato</label>
+            <input type="checkbox" id="spinach" name="vege" value="spinach">
+            <label for="spinach">Spinach</label><br>
+            <input type="checkbox" id="carrot" name="vege" value="carrot">
+            <label for="carrot">Carrot</label>
+            <input type="checkbox" id="broccoli" name="vege" value="broccoli">
+            <label for="broccoli">Broccoli</label>
+            <input type="checkbox" id="cucumber" name="vege" value="cucumber">
+            <label for="cucumber">Cucumber</label><br>
+            <input type="checkbox" id="potato" name="vege" value="potato">
+            <label for="potato">Potato</label>
+            <input type="checkbox" id="sweet_potato" name="vege" value="sweet potato">
+            <label for="sweet potato">Sweet potato</label>
+            
+            <input type="checkbox" id="peas" name="vege" value="peas">
+            <label for="peas">Peas</label><br>
+            <input type="checkbox" id="cabbage" name="vege" value="cabbage">
+            <label for="cabbage">Cabbage</label>
+            <input type="checkbox" id="chickpea" name="vege" value="chickpea">
+            <label for="chickpea">Chickpea</label>
+            <input type="checkbox" id="corn" name="vege" value="corn">
+            <label for="soybeans">Corn</label>
+            <input type="checkbox" id="mushroom" name="vege" value="mushroom">
+            <label for="mushroom">Mushroom</label>
+                </div>
+                <div class="col-md-3">
+                  <br><br>
+                  <p>Favorite Meat<hr style="width: 60%;height:1px;background-color:green "></p>
+                  <input type="checkbox" id="chicken" name="meat" value="chicken">
+            <label for="chicken">Chicken</label>
+            <input type="checkbox" id="turkey" name="meat" value="turkey">
+            <label for="turkey">Turkey</label><br>
+            <input type="checkbox" id="tuna" name="meat" value="tuna">
+            <label for="tuna">Tuna</label>
+            <input type="checkbox" id="salmon" name="meat" value="salmon">
+            <label for="salmon">Salmon</label><br>
+            <input type="checkbox" id="beef" name="meat" value="beef">
+            <label for="beef">Beef</label>
+            <input type="checkbox" id="pork" name="meat" value="pork">
+            <label for="pork">Pork</label>
+            <input type="checkbox" id="shrimp" name="meat" value="shrimp">
+            <label for="shrimp">Shrimp</label>
+            <input type="checkbox" id="egg" name="meat" value="egg">
+            <label for="egg">Egg</label>
+                </div>
+                <div class="col-md-3">
+                  <br><br>
+                  <p>Favorite Fruit<hr style="width: 60%;height:1px;background-color:green"></p>
+                  <input type="checkbox" id="avocado" name="fruit" value="avocado">
+            <label for="avocado">Avocado</label>
+            <input type="checkbox" id="apple" name="fruit" value="apple">
+            <label for="apple">Apple</label>
+            <input type="checkbox" id="blueberry" name="fruit" value="blueberry">
+            <label for="blueberry">Blueberry</label><br>
+            <input type="checkbox" id="banana" name="fruit" value="banana">
+            <label for="banana">Banana</label>
+            <input type="checkbox" id="mango" name="fruit" value="mango">
+            <label for="mango">Mango</label>
+            <input type="checkbox" id="strawberry" name="fruit" value="strawberry">
+            <label for="strawberry">Strawberry</label><br>
+            <input type="checkbox" id="blackberry" name="fruit" value="blackberry">
+            <label for="blackberry">Blackberry</label>
+            <input type="checkbox" id="kiwi" name="fruit" value="kiwi">
+            <label for="kiwi">Kiwi</label>
+            
+                </div>
+                <div class="col-md-3">
+                  <br><br>
+                  <p>Favorite Carb<hr style="width: 60%;height:1px;background-color:green"></p>
+                  <input type="checkbox" id="rice" name="carb" value="rice">
+            <label for="rice">Rice</label>
+            
+            <input type="checkbox" id="bread" name="carb" value="bread">
+            <label for="bread">Bread</label>
+
+            <input type="checkbox" id="oat" name="carb" value="oats">
+            <label for="oats">Oat</label>
+
+            <input type="checkbox" id="buckwheat" name="carb" value="buckwheat">
+            <label for="buckwheat">Buckwheat</label>
+
+            <input type="checkbox" id="quinoa" name="carb" value="quinoa">
+            <label for="quinoa">Quinoa</label>
+
+            <input type="checkbox" id="macaroni" name="carb" value="macaroni">
+            <label for="macaroni">Macaroni</label>
+
+            <input type="checkbox" id="noodle" name="carb" value="noodle">
+            <label for="noodle">Noodle</label>
+
+            <input type="checkbox" id="tortilla" name="carb" value="tortilla">
+            <label for="tortilla">tortilla</label>
+
+                </div>
+
+              </div>
+              <input type="submit" value="Next" id="login_register_button"><br><br>
+              </form>
+            </div>
+          </center>   
+          </div>   
+          <div class="col-md-1"></div>
+          </div>
+
+{% endblock %}

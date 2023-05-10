@@ -1,0 +1,38 @@
+
+
+
+{% extends "header_footer.html" %}
+{% block title %}
+Index
+{% endblock %}
+ {% block content %}
+
+<center>
+        <div class="container-fluid">
+
+          <div class="row" >
+          <div  class="col-md-1"></div>
+          <div  class="col-md-10" id="bg">
+           	
+            <div class="row">
+            	<div class="col-md-4"></div>
+            	<div class="col-md-4">
+            		<div class="profile_setup" style="margin-top:190px; background-color:white;">
+            		<h3 style="color:green;">What's your today weight? (lb)</h3>
+            		<form action="/index" method="POST">
+            			<input type="number" min="60" max="600" id="weight" name="weight" value="{{weight}}" class="setup_inputs" required ><br><br>
+            			<input type="submit" name="Confirm" id="editbutton" ><br>
+            		</form>
+            		</div>
+            	</div> 
+            	<div class="col-md-4"></div>
+            </div>
+            			
+
+         
+          </div>
+          <div  class="col-md-1"></div>
+          </div>
+        </div>
+         </center>   
+        {% endblock %}

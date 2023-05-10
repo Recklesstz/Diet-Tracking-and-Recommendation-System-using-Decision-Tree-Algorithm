@@ -1,0 +1,80 @@
+{% extends "header_footer.html" %}
+{% block title %}
+Edit Profile
+{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+
+      <center>
+
+      <div class="row">
+
+          <div class="col-md-3"></div>
+                   
+          <div class="col-md-6">
+          <div class="edit_border">
+              <h4>Edit Profile</h4>
+              <hr style="width: 40%;height:1px;background-color:green"><br>
+              <form action="/update_profile" method="POST">
+              <label for="name">Name</label><br>
+              <input type="text" id="name" name="name" class="edit_profile" value="{{name}}" required><br><br>
+
+              <label for="email">Email</label><br>
+              <input type="email" id="email" name="email" class="edit_profile" value="{{email}}" required><br><br>
+              
+              <label for="password">Password</label><br>
+              <input type="password" id="password" name="password" class="edit_profile" value="{{password}}" required><br><br>
+
+              <label for="age">Age </label><br>
+              <input type="number" min="10" max="70" size="20" id="age" name = "age" class="edit_profile" value="{{age}}" required><br>
+              <br>
+
+              <label for="gender">Select Gender </label><br>
+              <select name="gender" id="gender" class="edit_profile" required>   
+                <option value="{{gender}}">{{gender}}</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select><br><br>
+
+              <label for="weight">Enter Weight: </label><br>
+                  <input type="number" min="90" max="600" id="weight" name="weight"  class="edit_profile" value="{{weight}}"  disabled><br><br>
+
+              <label for="vegan">Vegan </label><br>
+                  <select name="vegan" id="vegan" class="edit_profile" >
+                    <option value="{{vegan}}">{{vegan}}</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>  
+                  </select><br><br>
+
+              <label for="feet">Height (ft) </label><br>
+                  <input type="number" min="4" max="7" id="feet"  name="feet" class="edit_profile" value="{{ft}}" required><br><br>
+              <label for="inches">Height (in) </label><br>
+                  <input type="number" min="0" max="12" id="inches"  name="inches" class="edit_profile" value="{{inch}}" required><br><br>
+
+              <label for="allergy">Allergy </label><br>
+                  <select name="allergy" id="allergy" class="edit_profile" >
+                    <option value="{{allergy}}">{{allergy}}</option>
+                    <option value="lactose">Lactose</option>
+                    <option value="gluten">Gluten</option>
+                    <option value="nuts">Nuts</option>
+                    <option value="eggs">Eggs</option>
+                  </select><br><br>
+
+              <input type="submit" value="Save Changes" id="editprofilebt"><br>
+              
+          </form>
+          <a  href="/profile" > <button style="margin-top:5px;"  id="editprofilebt">Back</button></a>
+          <br><br>
+        </div>
+        </div> <!-- end of border -->     
+          <div class="col-md-3"></div>  
+          
+      </div> <!-- end of row -->
+      </center>
+          
+                     
+      
+
+</div> <!-- end of container -->
+{% endblock %}

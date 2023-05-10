@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProfileSetup</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+ 
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+            <center>
+            <div class="profile_setup">
+              
+              
+              <h4>Profile Setup</h4>
+              <br>
+              <form action="/setup" method="POST"> 
+
+              <input type="hidden" name="name" value="{{name}}">
+              <input type="hidden" name="email" value="{{email}}">
+              <input type="hidden" name="password" value="{{password}}">
+
+              <div class="row">
+              	
+              	<div class="col-md-1"></div>
+
+              	<div class="col-md-3">
+              		<br>
+              		<label for="age">Enter Age </label><br>
+              		<input type="number" min="10" max="90" id="age" name = "age" class="setup_inputs" required ><br><br><br>
+
+
+              		<label for="gender">Select Gender </label><br>
+              		<select name="gender" id="gender" class="setup_inputs" required >
+              			
+              			<option value="male">Male</option>
+              			<option value="female">Female</option>
+              		</select>
+
+
+                </div>
+
+              	<div class="col-md-3">
+              		<br>
+              		<label for="weight">Enter Weight: </label><br>
+              		<input type="number" min="90" max="600" id="weight" name="weight" placeholder="lb" class="setup_inputs" required >
+
+              		<br><br><br>
+              		<label for="vegan">Vegan </label><br>
+              		<select name="vegan" id="vegan" class="setup_inputs" required >
+              			<option value="no">No</option>
+              			<option value="yes">Yes</option>	
+              		</select>
+                </div>
+
+                <div class="col-md-1"></div>
+
+                <div class="col-md-3">
+                	<br>
+                	<label for="feet">Enter height </label><br>
+              		<input type="number" min="3" max="7" id="feet" placeholder="feet" name="feet" style="border:1px solid green; border-radius:10px; height:30px;" required >
+              		<input type="number" min="0" max="12" id="inches" placeholder="inches" name="inches" style="border:1px solid green; border-radius:10px; height:30px;" required ><br><br><br>
+
+              		<label for="allergy">Allergy </label><br>
+              		<select name="allergy" id="allergy" class="setup_inputs" required >
+              			<option value="None">None</option>
+              			<option value="lactose">Lactose</option>
+              			<option value="gluten">Gluten</option>
+              			<option value="bean/nuts">Bean/Nuts</option>
+              			<option value="egg">Eggs</option>
+              			<option value="seafood">Seafood</option>
+              		</select>
+                </div>
+
+                <div class="col-md-1"></div>
+
+              </div>
+ 
+              
+
+              <br>
+              <div class="row">
+              	<div class="col-md-2"></div>
+              	<div class="col-md-8">
+              		<label for="activity">Activity Level </label>
+              		<select name="activity" id="activity" style="border:1px solid green; border-radius:10px; height:30px; width:80%;" required >
+              			<option value="sedentary">Sedentary (little or no exercise)</option>
+						<option value="lightly active">Lightly active (light exercise/sports 1-3 days/week)</option>
+						<option value="moderately active">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+						<option value="very active">Very active (hard exercise/sports 6-7 days a week)</option>
+						<option value="extra active">Extra active (very hard exercise/sports and a physical job)</option>
+              		</select>
+              	</div>
+              	<div class="col-md-2"></div>
+              </div>
+              <br>
+              <input type="submit" value="Next" id="login_register_button"><br><br>
+				</form>    
+            </div>
+          </center>   
+          </div>   
+          <div class="col-md-1"></div>
+          </div>
+        </div>
+</body>
+</html>

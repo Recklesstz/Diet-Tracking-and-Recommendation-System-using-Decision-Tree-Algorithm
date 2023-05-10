@@ -1,0 +1,209 @@
+/*login_register_css*/
+h4 {
+	color: green;
+	font-weight: bold;
+}
+h2 {
+	color: green;
+	font-weight: bold;
+}
+strong{
+	color:black;
+}
+.login_box {
+	border: 1px solid black;
+	margin-top: 190px;
+	width: 250px;
+	height: 300px;
+	border-radius: 5px;
+
+}
+
+
+.login_form {
+	padding:10px 10px 10px 10px;
+	border-radius: 5px;
+}
+
+.profile_setup {
+	border: 2px solid black;
+	margin-top: 30px;
+	border-radius: 10px;
+	padding:10px 10px 10px 10px;
+
+}
+
+.track_border{
+	border: 2px solid black;
+	margin: 30px 30px 30px 30px;
+	border-radius: 10px;
+	padding:10px 10px 10px 10px;
+}
+
+.edit_border{
+	border: 2px solid black;
+	margin: 30px 80px 30px 80px;
+	border-radius: 10px;
+	padding:15px 5px 5px 5px;
+}
+
+#login_register_button{
+	margin-top: 5px;
+	color:white;
+	background-color: green;
+	border: 1px solid black;
+	width: 190px;
+	height: 32px;
+	border-radius: 10px;
+}
+#lgoin_register_button:hover {
+	background-color: gray;
+	text-decoration: none;
+}
+
+#add_food{
+	color:blue;
+	background-color: white;
+	border:none;
+}
+
+#go-to-register{
+	color:black;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.profile_attributes{
+	color: green;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+#editbutton{
+	border: 1px solid black;
+	border-radius: 10px;
+	color: white;
+	background-color: green;
+	padding: 5px 10px 5px 10px;
+	font-size: 17px;
+
+}
+
+#editbutton:hover {
+	background-color: gray;
+	text-decoration: none;
+}
+
+#restart{
+
+	border: 1px solid black;
+	border-radius: 10px;
+	color: white;
+	background-color: red;
+	padding: 5px 10px 5px 10px;
+	font-size: 17px;
+
+
+}
+
+#restart:hover {
+	background-color: blue;
+	text-decoration: none;
+	
+}
+
+.edit_profile {
+	border: 1px solid green;
+	width: 60%;
+	border-radius: 10px;
+	height: 30px;
+}
+
+#editprofilebt{
+	border: 1px solid black;
+	border-radius: 10px;
+	color: white;
+	background-color: green;
+	padding: 5px 10px 5px 10px;
+	font-size: 17px;
+	width: 60%;
+}
+
+#editprofilebt:hover {
+	background-color: gray;
+	text-decoration: none;
+}
+
+.setup_inputs {
+	border:1px solid green;
+	width: 40%;
+	border-radius: 10px;
+	height: 30px;
+}
+
+#recommend_title{
+	font-weight: bold;
+	font-size: 18px;
+	color: green;
+}
+
+
+#navbarbar >li >a{
+	color: white;
+	font-weight: bold;
+}
+
+#navbarbar >li >a:hover{
+	color: black;
+	font-weight: bold;
+	background-color: grey;
+	border-radius: 10px;
+}
+
+.nav.navbar-nav li.active a{
+   background-color: #078282;
+   border-radius: 10px;
+}
+
+#navbarbar >li >a{
+	text-align: center;
+}
+
+.fa {
+	padding: 20px;
+  	font-size: 30px;
+  	width: 50px;
+	text-decoration: none;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+
+  
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+#bg {
+  width: 100%;
+  height: 500px;
+  background-image: url('../images/index_bg.jpg');
+  background-size: 100% 100%;
+  border: 1px solid green;
+}

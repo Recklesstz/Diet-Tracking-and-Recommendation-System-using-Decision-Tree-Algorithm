@@ -1,0 +1,121 @@
+{% extends "header_footer.html" %}
+{% block title %}
+Progress
+{% endblock %}
+ {% block content %}
+
+
+
+          <div id="days" style="display:none;">
+          {% for i in days %}
+          {{i}}
+          {% endfor %}
+          </div>
+
+          <div id="weeks" style="display:none;">
+          {% for i in weeks %}
+          {{i}}
+          {% endfor %}
+          </div>
+
+          <div id="d_weight" style="display:none;">
+          {% for i in d_weight %}
+          {{i}}
+          {% endfor %}
+          </div>
+
+          <div id="w_weight" style="display:none;">
+          {% for i in w_weight %}
+          {{i}}
+          {% endfor %}
+          </div>
+
+          <!-- <input type="hidden" id="days" size="20" value="{{days}}"> -->
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+            <center>
+            <div class="profile_setup">
+            <br>
+                <h4> Weight Progress (Daily) </h4>
+                <hr style="width: 20%;height:1px;background-color:green">
+                <canvas id="dailyprogress" style="width:100%;max-width:400px"></canvas>
+                <a  href="/daily_detail" > <button style="margin-top:5px;"  id="editbutton">More Detail</button></a>
+                <br>
+             <hr>   
+            <br>
+                <h4> Weight Progress (Weekly) </h4>
+                <hr style="width: 20%;height:1px;background-color:green">
+                <canvas id="weeklyprogress" style="width:100%;max-width:400px"></canvas>
+                <a  href="/weekly_detail" > <button style="margin-top:5px;"  id="editbutton">More Detail</button></a>
+                <br>
+
+            <br><br> 
+            </div>
+            
+            <br>
+          </center>   
+          </div>   
+          <div class="col-md-2"></div>
+          </div>
+        
+{% endblock %}
+
+
+{% block script2 %}
+<script >
+
+dates = document.getElementById('days').innerHTML
+days = dates.split(/[\s,]+/)
+
+
+dates = document.getElementById('d_weight').innerHTML
+weightes = dates.split(/[\s,]+/)
+
+
+
+new Chart("dailyprogress", {
+  type: "line",
+  data: {
+    labels: days,
+    datasets: [{ 
+      label: 'Weight(lb)',
+      data: weightes,
+      borderColor: "red",
+      
+    }]
+  },
+  options: {
+    legend: {display: 'bottom'}
+  }
+});
+
+</script>
+
+<script >
+week = document.getElementById('weeks').innerHTML
+weeks = week.split(/[\s,]+/)
+
+weight = document.getElementById('w_weight').innerHTML
+weightes = weight.split(/[\s,]+/)
+
+
+new Chart("weeklyprogress", {
+  type: "line",
+  data: {
+    labels: weeks,
+    datasets: [{ 
+      label: 'Weight(lb)',
+      data: weightes,
+      borderColor: "blue",
+      
+    }]
+  },
+  options: {
+    legend: {display: 'bottom'}
+  }
+});
+
+</script>
+{% endblock %}
+

@@ -1,0 +1,248 @@
+{% extends "header_footer.html" %}
+{% block title %}
+Profile
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+      $(function() {
+  $('.chart').easyPieChart({
+    size: 130,
+    barColor: "green",
+    scaleLength: 0,
+    lineWidth: 8,
+    trackColor: "#17d3e6",
+    lineCap: "circle",
+    animate: 2000,
+  });
+});
+
+</script>
+{% endblock %}
+
+ {% block content %}
+
+
+<p id="protein" hidden>{{p_consumed}}</p>
+<p id="carb" hidden>{{c_consumed}}</p>
+<p id="fat" hidden>{{f_consumed}}</p>
+
+
+      <center>
+      <div class="track_border">
+      <h4>Tracking</h4>
+      <br>
+      <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                              <b>Breakfast</b>
+                              <form action="/add_food" method="POST">
+                                    <input type="hidden" value="Breakfast" name="mealtime">
+                                    <input type="submit" value="Add Food" id="add_food"><br>
+                                    
+                                    <p>
+
+                                          
+                                    <b>{{breakfast}}</b>
+                                        
+                                          
+                                          
+                                    </p>
+                                    {% if session['bf_numbers'] %}
+                                    <p>
+                                    Total
+   
+                                    </p>
+                                    <p>
+                                          <b>Protein:</b> {{session['bf_numbers'][1]}}g
+                                    
+                                    </p>
+                                    <p>
+                                         <b> Carb:</b> {{session['bf_numbers'][2]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Fat:</b> {{session['bf_numbers'][3]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Calorie:</b> {{session['bf_numbers'][0]}}kcal
+                                    </p>
+                                    {% endif %}
+                              </form>
+                        </div>
+
+                        <div class="col-md-2">
+                              <b>Lunch</b>
+                              <form action="/add_food" method="POST">
+                                    <input type="hidden" value="Lunch" name="mealtime">
+                                    <input type="submit" value="Add Food" id="add_food"><br>
+                                    
+                                    <p>
+                                    <b>{{lunch}}</b> 
+                                          
+                                    
+                                          
+                                          
+                                    </p>
+                                    {% if session['lunch_numbers'] %}
+                                    <p>
+                                    Total
+   
+                                    </p>
+                                    <p>
+                                          <b>Protein:</b> {{session['lunch_numbers'][1]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Carb:</b> {{session['lunch_numbers'][2]}}g
+                              
+                                    </p>
+                                    <p>
+                                          <b>Fat:</b> {{session['lunch_numbers'][3]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Calorie:</b> {{session['lunch_numbers'][0]}}kcal
+                                    </p>
+                                    {% endif %}
+                                    
+                              </form>
+
+                        </div>
+
+                        <div class="col-md-2">
+                              <b>Snack</b>
+                              <form action="/add_food" method="POST">
+                                    <input type="hidden" value="Snack" name="mealtime">
+                                    <input type="submit" value="Add Food" id="add_food"><br>
+                                   
+                                    <p>
+
+                                         <b>{{snack}}</b>  
+                                          
+                                    </p>
+                                    {% if session['snack_numbers'] %}
+                                    <p>
+                                    Total
+   
+                                    </p>
+                                    <p>
+                                          <b>Protein:</b> {{session['snack_numbers'][1]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Carb:</b> {{session['snack_numbers'][2]}}g
+                              
+                                    </p>
+                                    <p>
+                                          <b>Fat:</b> {{session['snack_numbers'][3]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Calorie:</b> {{session['snack_numbers'][0]}}kcal
+                                    </p>
+                                    {% endif %}
+                              </form>
+                        </div>
+
+                        <div class="col-md-2">
+                              <b>Dinner</b>
+
+                              <form action="/add_food" method="POST">
+                              <input type="hidden" value="Dinner" name="mealtime">
+                                    <input type="submit" value="Add Food" id="add_food"><br>
+                                    
+                                    <p>
+
+                                         <b>{{dinner}}</b>  
+      
+                                    </p>
+                                    {% if session['dinner_numbers'] %}
+                                    <p>
+                                    Total
+   
+                                    </p>
+
+                                    <p>
+                                          <b>Protein:</b> {{session['dinner_numbers'][1]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Carb:</b> {{session['dinner_numbers'][2]}}g
+                              
+                                    </p>
+                                    <p>
+                                          <b>Fat:</b> {{session['dinner_numbers'][3]}}g
+                                    
+                                    </p>
+                                    <p>
+                                          <b>Calorie:</b> {{session['dinner_numbers'][0]}}kcal
+                                    </p>
+                                    {% endif %}
+                              </form>
+                        </div>
+
+                        <div class="col-md-2"></div>
+                  </div>
+
+                  
+                  <hr>
+
+                   <center><h4 style="font-weight:bold; color:green;">Today Consumption</h4></center>
+                        
+      <br>
+     
+      
+      <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                  <b>Calories Consumed</b><hr style="width:40%;height:1px;background-color:green">
+                  <div class="chart" data-percent="{{cal_percent}}">{{cal_consumed}} kcal </div>
+                  
+                  <p style="font-size:15px;">
+                        <br><br> Goal Calorie {{session['u_info'][17]}}g    <br>
+                        Reached {{cal_percent}}%
+                  </p>
+            </div>
+            <div class="col-md-2">
+                  <b>Protein Consumed</b><hr style="width:40%;height:1px;background-color:green">
+                  <div class="chart" data-percent="{{p_percent}}"> {{p_consumed}}g</div>
+                  
+                  <p style="font-size:15px;">
+                        <br><br> Goal Protein {{session['u_info'][14]}}g    <br>
+                        Reached {{p_percent}}%
+                  </p>
+                            
+            </div>
+            
+            <div class="col-md-2">
+                   <b>Carb Consumed</b><hr style="width:40%;height:1px;background-color:green">
+                   
+                  <div class="chart" data-percent="{{c_percent}}"> {{c_consumed}}g</div>
+                  
+                  <p style="font-size:15px;">
+                        <br><br> Goal Carb {{session['u_info'][15]}}g    <br>
+                        Reached {{c_percent}}%
+                  </p>
+            </div>
+            
+            <div class="col-md-2">
+                  <b>Fat Consumed</b><hr style="width:40%;height:1px;background-color:green">
+                  <div class="chart" data-percent="{{f_percent}}"> {{f_consumed}}g</div>
+                  
+                  <p style="font-size:15px;">
+                        <br><br> Goal Fat {{session['u_info'][16]}}g<br>
+                        Reached {{f_percent}}%    
+                  </p>
+            </div>
+            <div class="col-md-2"></div>
+            </div>
+      
+     
+
+
+</div> <!-- end of border -->
+</center>
+
+{% endblock %}

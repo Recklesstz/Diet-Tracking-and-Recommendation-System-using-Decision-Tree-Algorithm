@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+</script>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <br><br>
+          <div  style="height:15px; background-color:grey; border-radius:15px;">
+            <div id="myBar" style="height:15px; background-color:green; border-radius:15px;">
+              
+            </div>
+            <button onclick="move()">Click Me</button>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

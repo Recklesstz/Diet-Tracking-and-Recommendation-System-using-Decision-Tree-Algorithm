@@ -1,0 +1,125 @@
+{% extends "header_footer.html" %}
+{% block title %}
+Recommendation
+{% endblock %}
+ {% block content %}
+ 
+        
+
+
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+            <center>
+            <div class="profile_setup">
+            <br>
+                <h4> Today Recommendation </h4>
+                <hr style="width: 20%;height:1px;background-color:green">
+                
+                <p>According to your data, here are meal recommendation for you today. </p>
+                <br>
+                <div class="row">
+                  <div class="col-md-3">
+                    <p id="recommend_title">Breakfast</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+                    
+                    {{bf_prediction}}
+
+
+                  </div>
+
+                  <div class="col-md-3">
+                    <p id="recommend_title">Lunch</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+                    
+                    {{lunch_prediction}}
+                  </div>
+
+                  <div class="col-md-3">
+                    <p id="recommend_title">Snack</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+                    
+                    {{snack_prediction}}
+                  </div>
+
+                  <div class="col-md-3">
+                    <p id="recommend_title">Snack</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+                    
+                    {{dinner_prediction}}
+                  </div>
+
+                
+                </div>
+                <hr>
+
+                <h4>Target Nutrients Goals</h4>
+                <hr style="width: 20%;height:1px;background-color:green">
+                
+                
+                <div class="row">
+                  <div class="col-md-3">
+                    <p id="recommend_title">Breakfast</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+
+                    <b>Calorie:</b> {{bf_cal}}kcal<br>
+                    <b>Protein:</b> {{bf_protein}}g<br>
+                    <b>Carb:</b> {{bf_carb}}g<br>
+                    <b>Fat:</b> {{bf_fat}}g <br>
+
+                  </div>
+
+                  <div class="col-md-3">
+                    <p id="recommend_title">Lunch</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+
+                    <b>Calorie:</b> {{lunch_cal}}kcal<br>
+                    <b>Protein:</b> {{lunch_protein}}g<br>
+                    <b>Carb:</b> {{lunch_carb}}g<br>
+                    <b>Fat:</b> {{lunch_fat}}g<br>
+
+                  </div>
+
+                  <div class="col-md-3">
+                    <p id="recommend_title">Snack</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+
+                    <b>Calorie:</b> {{snack_cal}}kcal<br>
+                    <b>Protein:</b> {{snack_protein}}g<br>
+                    <b>Carb:</b> {{snack_carb}}g<br>
+                    <b>Fat:</b> {{snack_fat}}g<br>
+
+                  </div>
+
+                  <div class="col-md-3">
+                    <p id="recommend_title">Dinner</p>
+                    <hr style="width: 40%;height:1px;background-color:green">
+
+                    <b>Calorie:</b> {{dinner_cal}}kcal<br>
+                    <b>Protein:</b> {{dinner_protein}}g<br>
+                    <b>Carb:</b> {{dinner_carb}}g<br>
+                    <b>Fat:</b> {{dinner_fat}}g<br>
+
+                  </div>
+
+                
+                </div>
+
+                <br>
+                <hr>
+                <br>
+                <b><p>Please make sure adjust the ingredients of each meals in order to hit your nutrient goals in each meal, for more optimal meal ajustment.</p></b>
+
+                <b><p>Those numbers are very base line numbers and are quite arbitrary that can be very individual that no need to be very rocket science accurate. </p></b>
+
+
+            <br><br> 
+            </div>
+            <a onclick="history.back(-1)" > <button style="margin-top:5px;"  id="editbutton">Back</button></a>
+          </center>   
+          </div>   
+          <div class="col-md-1"></div>
+          </div>
+        
+
+{% endblock %}

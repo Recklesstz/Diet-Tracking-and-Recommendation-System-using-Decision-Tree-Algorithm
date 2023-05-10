@@ -1,0 +1,109 @@
+
+
+
+{% extends "header_footer.html" %}
+{% block title %}
+Profile
+{% endblock %}
+ {% block content %}
+
+
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+            <center>
+            <div class="profile_setup">
+              <h2>Profile</h2>
+              
+              <div class="row">
+              <div class="col-md-4">
+                <br>
+                
+                <p class="profile_attributes">Name: <strong>{{u_info.u_username}}</strong> </p>
+                <p class="profile_attributes">
+                  
+                    Weight: <strong>{{u_info.u_weight}}lb</strong>
+                  
+                </p>
+                <p class="profile_attributes">Height <strong>{{u_info.u_feet}}'{{u_info.u_inches}}"</strong> </p>
+                <p class="profile_attributes">Age: <strong>{{u_info.u_age}}</strong></p>
+                <p class="profile_attributes">Bodyfat Percentage: <strong>{{u_info.u_bodyfat}}%</strong></p>
+                <p class="profile_attributes">Current Status: <strong>{{u_info.u_status}}</strong></p>
+                
+                
+              </div>
+
+              <div class="col-md-4">
+              <br>
+                <p class="profile_attributes">Day {{u_info.u_journey}} of the journey </p>
+                <p class="profile_attributes">Vegan: <strong>{{u_info.u_vegan}}</strong></p>
+                <p class="profile_attributes">Allergy: <strong>{{u_info.u_allergy}}</strong></p>
+                <br>
+                
+              </div>
+
+              <div class="col-md-4">
+
+                <br>
+                
+                <p class="profile_attributes">Daily Requirements</p>
+                <hr style="width: 40%;height:1px;background-color:green">
+                <p class="profile_attributes">Calories: <strong>{{u_info.u_calories}}kcal</strong> </p>
+                <p class="profile_attributes">Protein: <strong>{{u_info.u_protein}}g</strong> </p>
+                <p class="profile_attributes">Carbohydrate: <strong>{{u_info.u_carb}}g</strong> </p>
+                <p class="profile_attributes">Fat: <strong>{{u_info.u_fat}}g</strong> </p>
+                
+              </div>            
+              </div>        
+              <br>     
+              <!-- <div class="row">
+
+                <div class="col-md-3">
+                  <p class="profile_attributes">Fav Fruits</p>
+                  <hr style="width: 40%;height:1px;background-color:green">
+                </div>
+                <div class="col-md-3">
+                  <p class="profile_attributes">Fav Vege</p>
+                  <hr style="width: 40%;height:1px;background-color:green">
+                </div>
+                <div class="col-md-3">
+                  <p class="profile_attributes">Fav Meat</p>
+                  <hr style="width: 40%;height:1px;background-color:green">
+                </div>
+                <div class="col-md-3">
+                  <p class="profile_attributes">Fav Carbs</p>
+                  <hr style="width: 40%;height:1px;background-color:green">
+                </div>
+
+              </div> -->
+              <br><br>
+              <div class="row">
+
+                <div class="col-md-4">
+                    
+                </div>
+
+                <div class="col-md-4">
+                  <a href="/update_profile" id="editbutton">Edit Profile</a>
+                <a onclick="history.back(-1)" > <button style="margin-top:5px;"  id="editbutton">Back</button></a>
+                
+                <br><br>
+                </div>
+                
+                <div class="col-md-4">
+                  
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </center>   
+          </div>   
+          <div class="col-md-1"></div>
+          </div>
+        </div>
+        {% endblock %}

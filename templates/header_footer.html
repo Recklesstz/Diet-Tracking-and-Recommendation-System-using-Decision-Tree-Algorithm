@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block title %}
+
+		{% endblock %}
+	</title>
+</head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.js"></script> 
+      <script type="text/javascript" src="http://rendro.github.io/easy-pie-chart/javascripts/jquery.easy-pie-chart.js"></script> 
+      <link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.min.css"> 
+      <link rel="stylesheet" type="text/css" href="http://rendro.github.io/easy-pie-chart/stylesheets/jquery.easy-pie-chart.css">
+{% block script %}
+
+{% endblock %}
+</head>
+<body>
+
+
+  <div class="container-fluid">
+<nav class="navbar navbar-default" style="background-color:green;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <a class="navbar-brand" href="#" style="color:white; background-color:red;">Eat4Fit</a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    	
+      <ul class="nav navbar-nav" id="navbarbar" >
+
+        <li><a href="/index">Home</a></li>
+        <li><a href="/recommend_setup">Recommendation</a></li>
+        <li><a href="/track">Tracking</a></li>
+        <li><a href="/progress">Progress</a></li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right" id="navbarbar" >
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+{% block content %}
+
+{% endblock %}
+
+<hr>
+
+
+
+	<div class="row">
+	<center>
+		<div class="col-md-2"></div>
+		<div class="col-md-1"><a href="/contact">Contact Us</a></div>
+		<div class="col-md-1"><a href="/faq">FAQ</a></div>
+		<div class="col-md-1"><a href="/about">About Us</a></div>
+		<div class="col-md-2"></div>
+		
+		<div class="col-md-3">
+			
+			<a href="#" class="fa fa-facebook"></a>
+
+			<a href="#" class="fa fa-twitter"></a>
+
+			<a href="#" class="fa fa-instagram"></a>
+
+			<a href="#" class="fa fa-reddit"></a>
+		
+		</div>
+		
+		<div class="col-md-2"></div>
+		 
+		</div>
+		</center>	
+		
+<br>
+
+{% block script2 %}
+
+{% endblock %}
+
+
+
+<script type="text/javascript">
+            $(document).ready(function () {
+        var url = window.location;
+    // Will only work if string in href matches with location
+        $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+
+    // Will also work for relative and absolute hrefs
+        $('ul.nav a').filter(function () {
+            return this.href == url;
+        }).parent().addClass('active').parent().parent().addClass('active');
+    });
+        </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+{% extends "header_footer.html" %}
+{% block title %}
+Add food
+{% endblock %}
+ {% block content %}
+
+        <div class="container-fluid">
+        <center>
+        <div class="track_border">
+      <h4>Track Food for {{mealtime}} Meals </h4>
+      <br>
+      <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                           <form action="/add_successful" method="POST">
+                              <input type="hidden" value="{{mealtime}}" name="mealtime">
+                              <label for="food">Select Food to Add</label>
+                              <input type="text" id="food" name = "food" style="border:1px solid green; border-radius:10px; height:40px;">
+                              <button id="editbutton" >Add</button><br><br>
+                              <label for="portion">Portion size</label>
+                              <input type="number" id="portion" name = "portion" style="border:1px solid green; border-radius:10px; height:40px;" min="1", max = "999">
+                              <label for="portion">Portion type</label>
+                              <select name="portion_type" id="portion_type" style="border:1px solid green; border-radius:10px; height:40px;" required >
+                                <option value="g">g</option>
+                                <option value="large">large</option>
+                                <option value="medium">medium</option>
+                                <option value="small">small</option>
+                                <option value="piece">piece</option>
+                                <option value="cup">cup</option>
+                                <option value="tray">tray</option>
+                                <option value="oz">oz</option>
+                                <option value="liter">liter</option>
+                                <option value="slice">slice</option>
+                              </select>
+                            </form>
+                            <br><br>
+                            <a  href="/track" > <button style="margin-top:5px;"  id="editbutton">Back</button></a>
+
+
+                        </div>
+                        <div class="col-md-2"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <center>
+            {% if session['bf_meal'] and mealtime == "Breakfast" %}
+             <table style="border-radius:5px; border:solid 1px white; " width="100%">
+              <tr bgcolor="green" style="color:white;">
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Carb</th>
+                <th>Fat</th>
+                <th>Action</th>
+                
+              </tr>               
+            {%for i in session['bf_meal'] %}
+            
+            <form action="/delete_food" method="POST">
+            <input type="hidden" name="fname" value="{{i[0]}}"  >
+            <input type="hidden" value="{{mealtime}}" name="mealtime">
+            
+              <tr>
+                <td>{{i[0]}} </td>
+                <td>{{i[1]}} {{i[2]}}  </td>
+                <td>{{i[3]}}kcal</td>
+                <td>{{i[4]}}g</td>
+                <td>{{i[5]}}g</td>
+                <td>{{i[6]}}g</td>
+                <td>{% if i %} <input type="submit" value="Remove" style="margin-top:5px;"  id="editbutton">{% endif %}</td>
+              </tr>
+            
+             
+            
+           
+            
+            </form>
+
+            {% endfor %}
+            <!-- {% if session['finalCalorie'] and session['finalProtein'] and session['finalCarb'] and session['finalFat'] %}
+            <hr>
+            <tr>
+            <td></td>
+            <td>Total</td>
+            <td>{{session['finalCalorie']}} kcal</td>
+            <td>{{session['finalProtein']}}</td>
+            <td>{{session['finalCarb']}}</td>
+            <td>{{session['finalFat']}}</td>
+            
+            </tr>
+            {% endif %} -->
+            
+            {% if session['bf_numbers'] and mealtime == "Breakfast" %}
+            <tr>
+            
+            <td></td>
+            <td>Total</td>
+            <td>{{session['bf_numbers'][0]}}kcal</td>
+            <td>{{session['bf_numbers'][1]}}g</td>
+            <td>{{session['bf_numbers'][2]}}g</td>
+            <td>{{session['bf_numbers'][3]}}g</td>
+            
+            
+            </tr>
+            {% endif %}
+            </table>
+
+            {% else %}
+                
+            {% endif %} 
+            
+            {% if session['lunch_meal'] and mealtime == "Lunch" %}
+             <table style="border-radius:5px; border:solid 1px white; " width="100%">
+              <tr bgcolor="green" style="color:white;">
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Carb</th>
+                <th>Fat</th>
+                <th>Action</th>
+                
+              </tr>               
+            {%for i in session['lunch_meal'] %}
+            
+            <form action="/delete_food" method="POST">
+            <input type="hidden" name="fname" value="{{i[0]}}"  >
+            <input type="hidden" value="{{mealtime}}" name="mealtime">
+            
+              <tr>
+                <td>{{i[0]}} </td>
+                <td>{{i[1]}} {{i[2]}}  </td>
+                <td>{{i[3]}}kcal</td>
+                <td>{{i[4]}}g</td>
+                <td>{{i[5]}}g</td>
+                <td>{{i[6]}}g</td>
+                <td>{% if i %} <input type="submit" value="Remove" style="margin-top:5px;"  id="editbutton">{% endif %}</td>
+              </tr>
+            
+             
+            
+           
+            
+            </form>
+
+            {% endfor %}
+            
+            
+            {% if session['lunch_numbers'] and mealtime == "Lunch" %}
+            <tr>
+            
+            <td></td>
+            <td>Total</td>
+            <td>{{session['lunch_numbers'][0]}}kcal</td>
+            <td>{{session['lunch_numbers'][1]}}g</td>
+            <td>{{session['lunch_numbers'][2]}}g</td>
+            <td>{{session['lunch_numbers'][3]}}g</td>
+            
+            
+            </tr>
+            {% endif %}
+            </table>
+
+            {% else %}
+                
+            {% endif %} 
+
+            {% if session['snack_meal'] and mealtime == "Snack" %}
+             <table style="border-radius:5px; border:solid 1px white; " width="100%">
+              <tr bgcolor="green" style="color:white;">
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Carb</th>
+                <th>Fat</th>
+                <th>Action</th>
+                
+              </tr>               
+            {%for i in session['snack_meal'] %}
+            
+            <form action="/delete_food" method="POST">
+            <input type="hidden" name="fname" value="{{i[0]}}"  >
+            <input type="hidden" value="{{mealtime}}" name="mealtime">
+            
+              <tr>
+                <td>{{i[0]}} </td>
+                <td>{{i[1]}} {{i[2]}}  </td>
+                <td>{{i[3]}}kcal</td>
+                <td>{{i[4]}}g</td>
+                <td>{{i[5]}}g</td>
+                <td>{{i[6]}}g</td>
+                <td>{% if i %} <input type="submit" value="Remove" style="margin-top:5px;"  id="editbutton">{% endif %}</td>
+              </tr>
+            
+             
+            
+           
+            
+            </form>
+
+            {% endfor %}
+            
+            
+            {% if session['snack_numbers'] and mealtime == "Snack" %}
+            <tr>
+            
+            <td></td>
+            <td>Total</td>
+            <td>{{session['snack_numbers'][0]}}kcal</td>
+            <td>{{session['snack_numbers'][1]}}g</td>
+            <td>{{session['snack_numbers'][2]}}g</td>
+            <td>{{session['snack_numbers'][3]}}g</td>
+            
+            
+            </tr>
+            {% endif %}
+            </table>
+
+            {% else %}
+                
+            {% endif %} 
+
+            {% if session['dinner_meal'] and mealtime == "Dinner" %}
+             <table style="border-radius:5px; border:solid 1px white; " width="100%">
+              <tr bgcolor="green" style="color:white;">
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Carb</th>
+                <th>Fat</th>
+                <th>Action</th>
+                
+              </tr>               
+            {%for i in session['dinner_meal'] %}
+            
+            <form action="/delete_food" method="POST">
+            <input type="hidden" name="fname" value="{{i[0]}}"  >
+            <input type="hidden" value="{{mealtime}}" name="mealtime">
+            
+              <tr>
+                <td>{{i[0]}} </td>
+                <td>{{i[1]}} {{i[2]}}  </td>
+                <td>{{i[3]}}kcal</td>
+                <td>{{i[4]}}g</td>
+                <td>{{i[5]}}g</td>
+                <td>{{i[6]}}g</td>
+                <td>{% if i %} <input type="submit" value="Remove" style="margin-top:5px;"  id="editbutton">{% endif %}</td>
+              </tr>
+            
+             
+            
+           
+            
+            </form>
+
+            {% endfor %}
+            
+            
+            {% if session['dinner_numbers'] and mealtime == "Dinner" %}
+            <tr>
+            
+            <td></td>
+            <td>Total</td>
+            <td>{{session['dinner_numbers'][0]}}kcal</td>
+            <td>{{session['dinner_numbers'][1]}}g</td>
+            <td>{{session['dinner_numbers'][2]}}g</td>
+            <td>{{session['dinner_numbers'][3]}}g</td>
+            
+            
+            </tr>
+            {% endif %}
+            </table>
+
+            {% else %}
+                
+            {% endif %}
+
+          </center>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+
+</div> <!-- end of border -->  
+</center>
+</div>         
+{% endblock %}
